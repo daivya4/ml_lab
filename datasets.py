@@ -1,9 +1,25 @@
+# =====================================================
+# COMMON DATASETS (FOR EXAM USE)
+# =====================================================
+
+# DATASET SOURCES (USE IF NEEDED):
+# 1. Kaggle → https://www.kaggle.com/datasets
+#    (Best for real-world datasets like loan, housing, customer data)
+
+# 2. UCI Machine Learning Repository → https://archive.ics.uci.edu/
+#    (Classic datasets like Iris, Wine, Breast Cancer)
+
+# 3. Scikit-learn Built-in Datasets → No internet required
+#    (Safest option during exam)
+
+
 # ==============================
 # IMPORTS
 # ==============================
 import pandas as pd
 from sklearn.datasets import load_iris, load_wine, load_breast_cancer
 from sklearn.datasets import fetch_california_housing, make_blobs
+
 
 # ==============================
 # 1. IRIS (Multi-class classification)
@@ -15,6 +31,7 @@ y_iris = iris.target
 print("Iris Dataset")
 print(X_iris.head())
 
+
 # ==============================
 # 2. WINE (Multi-class classification)
 # ==============================
@@ -24,6 +41,7 @@ y_wine = wine.target
 
 print("\nWine Dataset")
 print(X_wine.head())
+
 
 # ==============================
 # 3. BREAST CANCER (Binary classification)
@@ -35,6 +53,7 @@ y_cancer = cancer.target
 print("\nBreast Cancer Dataset")
 print(X_cancer.head())
 
+
 # ==============================
 # 4. CALIFORNIA HOUSING (Regression)
 # ==============================
@@ -45,6 +64,7 @@ y_house = housing.target
 print("\nHousing Dataset")
 print(X_house.head())
 
+
 # ==============================
 # 5. K-MEANS DATA (Clustering)
 # ==============================
@@ -53,7 +73,11 @@ X_cluster, _ = make_blobs(n_samples=200, centers=3, random_state=42)
 print("\nClustering Dataset")
 print(X_cluster[:5])
 
+
 # ==============================
-# READY TO USE:
-# Pick any dataset and apply model
+# USAGE GUIDE:
 # ==============================
+# Multi-class classification → X_iris / X_wine
+# Binary classification → X_cancer
+# Regression → X_house
+# Clustering → X_cluster
