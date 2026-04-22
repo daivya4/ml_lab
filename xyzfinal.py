@@ -223,6 +223,30 @@ X_reduced = pca.fit_transform(X_cluster)
 print("\\nPCA REDUCED SHAPE:", X_reduced.shape)
 
 
+from sklearn.feature_extraction.text import TfidfVectorizer
+tfidf = TfidfVectorizer()
+X_train_tfidf = tfidf.fit_transform(X_train)
+X_test_tfidf = tfidf.transform(X_test)
+
+import pandas as pd
+from sklearn.preprocessing import OneHotEncoder
+
+# Sample data
+df = pd.DataFrame({
+    'City': ['Delhi', 'Mumbai', 'Delhi', 'Chennai']
+})
+
+# Initialize encoder
+encoder = OneHotEncoder(sparse=False)
+
+# Apply encoding
+encoded = encoder.fit_transform(df[['City']])
+
+# Convert to DataFrame
+encoded_df = pd.DataFrame(encoded, columns=encoder.get_feature_names_out())
+
+print(encoded_df)
+
 # ============================================================
 # END OF FILE
 # ============================================================
